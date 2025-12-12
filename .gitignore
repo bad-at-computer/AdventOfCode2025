@@ -7,6 +7,7 @@
 /projectSettingsUpdater.xml
 /.idea.AdventOfCode2025.iml
 /.idea/*
+/.idea/
 # Ignored default folder with query files
 /queries/
 # Datasource local storage ignored files
@@ -14,5 +15,5 @@
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
-/bin/*
-/obj/*
+/bin/
+/obj/
