@@ -11,9 +11,7 @@ public class Day01 : IDay
 
         var inputArray = input.Split('\n');
 
-#if DEBUG
-        Console.WriteLine($"The dial starts by pointing at {currentPosition}");
-#endif
+        DebugPrint.Log($"The dial starts by pointing at {currentPosition}");
 
         foreach (var line in inputArray)
         {
@@ -31,10 +29,9 @@ public class Day01 : IDay
             {
                 countOfZeroes++;
             }
-#if DEBUG
-            Console.WriteLine(
+            
+            DebugPrint.Log(
                 $"The dial at \t{currentPosition} is rotated \t{line} to point at \t{finalResult} passing zero \t{countOfZeroes} times");
-#endif
 
             currentPosition = Math.Abs(finalResult);
         }
@@ -49,9 +46,8 @@ public class Day01 : IDay
 
         var inputArray = input.Split('\n');
 
-#if DEBUG
-        Console.WriteLine($"The dial starts by pointing at {currentPosition}");
-#endif
+
+        DebugPrint.Log($"The dial starts by pointing at {currentPosition}");
 
         foreach (var line in inputArray)
         {
@@ -75,10 +71,8 @@ public class Day01 : IDay
             
             countOfZeroes += zeroPasses;
 
-#if DEBUG
-            Console.WriteLine(
+            DebugPrint.Log(
                 $"The dial at \t{currentPosition} is rotated \t{line} to point at \t{finalResult} passing zero \t{zeroPasses} times");
-#endif
 
             currentPosition = Math.Abs(finalResult);
         }

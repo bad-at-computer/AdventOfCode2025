@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace AdventOfCode2025.Days;
 
 public class Day02 : IDay
@@ -39,14 +41,22 @@ public class Day02 : IDay
             var endId = rangeArray[1].Trim();
             var firstIdNumeric = long.Parse(firstId);
             var endIdNumeric = long.Parse(endId);
+
+            long max = 0;
             
             for (var currentId = firstIdNumeric; currentId <= endIdNumeric; currentId++)
             {
-                if (IsInvalidIdB(currentId.ToString()))
+                // if (IsInvalidIdB(currentId.ToString()))
+                // {
+                //     total += currentId;
+                // }
+                if (currentId > max)
                 {
-                    total += currentId;
+                    max = currentId;
                 }
             }
+
+            DebugPrint.Log($"longest string is {max.ToString().Length}");
         }
         
         return total.ToString();
@@ -63,6 +73,8 @@ public class Day02 : IDay
 
     public bool IsInvalidIdB(string currentIdString)
     {
+       // TODO use Regex to identify repetition
         return false;
+        
     }
 }

@@ -1,4 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
+
+using System.Diagnostics;
 using System.Net;
 using System.Reflection;
 using AdventOfCode2025.Days;
@@ -26,7 +28,7 @@ var days = new Dictionary<int, IDay>
     { 2, new Day02() },
     { 3, new Day03() },
     { 4, new Day04() },
-    // { 5, new Day05() },
+    { 5, new Day05() },
     // { 6, new Day06() },
     // { 7, new Day07() },
     // { 8, new Day08() },
@@ -102,6 +104,23 @@ static IDay? LoadDay(int day)
         .FirstOrDefault(d => d!.DayNumber == day);
 }
 
+// Debug-only printing helper
+internal static class DebugPrint
+{
+    [Conditional("DEBUG")]
+    public static void Log(string message)
+    {
+        if (!Debugger.IsAttached) return;
+        Console.WriteLine(message);
+    }
+
+    [Conditional("DEBUG")]
+    public static void Log(string message, params object?[] args)
+    {
+        if (!Debugger.IsAttached) return;
+        Console.WriteLine(message, args);
+    }
+}
 
 public class AdventOfCodeFetcher
 {
