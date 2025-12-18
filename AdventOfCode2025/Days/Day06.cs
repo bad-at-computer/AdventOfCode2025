@@ -39,7 +39,6 @@ public class Day06 : IDay
             }
 
             total += currentTotal;
-            Console.WriteLine($"Adding line {i}: {currentTotal}");
         }
 
         return total.ToString();
