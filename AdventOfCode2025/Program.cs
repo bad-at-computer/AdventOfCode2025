@@ -22,47 +22,6 @@ while (day is < 1 or > 31)
     Console.WriteLine("Invalid input. Please enter a number between 1 and 31.");
 }
 
-var days = new Dictionary<int, IDay>
-{
-    { 1, new Day01() },
-    { 2, new Day02() },
-    { 3, new Day03() },
-    { 4, new Day04() },
-    { 5, new Day05() },
-    // { 6, new Day06() },
-    // { 7, new Day07() },
-    // { 8, new Day08() },
-    // { 9, new Day09() },
-    // { 10, new Day10() },
-    // { 11, new Day11() },
-    // { 12, new Day12() },
-    // { 13, new Day13() },
-    // { 14, new Day14() },
-    // { 15, new Day15() },
-    // { 16, new Day16() },
-    // { 17, new Day17() },
-    // { 18, new Day18() },
-    // { 19, new Day19() },
-    // { 20, new Day20() },
-    // { 21, new Day21() },
-    // { 22, new Day22() },
-    // { 23, new Day23() },
-    // { 24, new Day24() },
-    // { 25, new Day25() },
-    // { 26, new Day26() },
-    // { 27, new Day27() },
-    // { 28, new Day28() },
-    // { 29, new Day29() },
-    // { 30, new Day30() },
-    // { 31, new Day31() }
-};
-
-if (!days.TryGetValue(day, out var dayInstance))
-{
-    Console.WriteLine("Day not implemented.");
-    return -1;
-}
-
 // Get session cookie
 var session = Environment.GetEnvironmentVariable("AOC_SESSION");
 
@@ -77,7 +36,7 @@ var input = await fetcher.GetInputAsync(day);
 input = input.Trim();
 
 // Find the matching day class dynamically
-dayInstance = LoadDay(day);
+var dayInstance = LoadDay(day);
 
 if (dayInstance == null)
 {
