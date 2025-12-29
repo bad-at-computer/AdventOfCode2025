@@ -17,3 +17,7 @@
 /httpRequests/
 /bin/
 /obj/
+/AdventOfCode2025/obj/
+/AdventOfCode2025/bin/
+/AdventOfCode2025/httpRequests/
+/*.sln.DotSettings*
